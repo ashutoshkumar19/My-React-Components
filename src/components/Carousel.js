@@ -14,7 +14,7 @@ function Carousel(props) {
       initialState[i] = false;
     }
   }
-  const [state, setstate] = useState(initialState);
+  const [state, setState] = useState(initialState);
 
   for (let i = 0; i < count; i++) {
     slide_items.push(
@@ -32,7 +32,7 @@ function Carousel(props) {
   const handleDot = index => {
     for (let i = 0; i < count; i++) {
       if (state[i]) {
-        setstate({ ...state, [i]: false, [index]: true });
+        setState({ ...state, [i]: false, [index]: true });
       }
     }
   };
@@ -40,14 +40,14 @@ function Carousel(props) {
   const handleRightControl = () => {
     for (let i = 0; i < count; i++) {
       if (state[i]) {
-        setstate({ ...state, [i]: false, [(i + 1) % count]: true });
+        setState({ ...state, [i]: false, [(i + 1) % count]: true });
       }
     }
   };
   const handleLeftControl = () => {
     for (let i = 0; i < count; i++) {
       if (state[i]) {
-        setstate({ ...state, [i]: false, [(i - 1 + count) % count]: true });
+        setState({ ...state, [i]: false, [(i - 1 + count) % count]: true });
       }
     }
   };
