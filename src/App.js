@@ -1,12 +1,17 @@
 import React from 'react';
 import './styles/App.scss';
 import Carousel from './components/Carousel';
+import ProductCard from './components/ProductCard';
 
 function App() {
+  const list = [];
+  for (var i = 0; i < 3; i++) {
+    list.push(i);
+  }
   return (
     <div className='main-body'>
       <div className='carousel-container'>
-        <h2 className='heading'>Carousel</h2>
+        <h3 className='heading'>Carousel</h3>
         <Carousel
           slides={[
             'https://www.capturelandscapes.com/wp-content/uploads/2018/05/Seceda-sunrise-960.jpg',
@@ -26,6 +31,32 @@ function App() {
           ]}
           timer={6000}
         />
+      </div>
+
+      <div className='product-card-container'>
+        <h3 className='heading'>Product Cards</h3>
+
+        {list.map(i => (
+          <ProductCard
+            images={[
+              'https://cdn.newday.mk/uploads/2018/08/395142931-1.jpg',
+              'https://www.atsshopping.com/images/products/1551089542.jpg',
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQEyTmpTYLSyB9xNE7LYkVWDCU6xIG2R8T4Ed_lsGe6Jb6gtGm3',
+              'https://5.imimg.com/data5/VT/DA/MY-15780217/troops-tp-7040-extra-bass-headphone-500x500.jpg'
+            ]}
+            id={'id'}
+            title={'Hisonic 400 Super Extra Bass Bluetooth Headset with microphone'}
+            link={'#!'}
+            currency={'₹'}
+            price={'1499 - 1999'}
+            oldPrice={'2500'}
+            discount={'50'}
+            rating={'4.5'}
+            soldCount={'2463'}
+            storeName={'Hisonic Store'}
+            timer={3000}
+          />
+        ))}
       </div>
     </div>
   );
