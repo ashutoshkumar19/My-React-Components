@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/ProductCard.scss';
+import './ProductCard.scss';
 
 function ProductCard(props) {
   const count = props.images.length;

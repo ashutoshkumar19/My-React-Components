@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Carousel.scss';
+import './Carousel.scss';
 
 function Carousel(props) {
   const count = props.slides.length;

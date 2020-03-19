@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles/App.scss';
-import Carousel from './components/Carousel';
-import ProductCard from './components/ProductCard';
+import Carousel from './components/Carousel/Carousel';
+import ProductCard from './components/ProductCard/ProductCard';
+import SliderContainer from './components/ContainerWithSlider/SliderContainer';
 
 function App() {
   const list = [];
@@ -57,6 +58,10 @@ function App() {
             timer={3000}
           />
         ))}
+      </div>
+
+      <div className='container-with-slider'>
+        <SliderContainer />
       </div>
     </div>
   );
