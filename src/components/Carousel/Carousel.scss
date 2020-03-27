@@ -45,6 +45,8 @@
     padding: 0 8px;
     transform: translateY(-100%);
     cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     &.control-left {
       float: left;

@@ -21,7 +21,7 @@ function ProductCard(props) {
   for (let i = 0; i < count; i++) {
     slide_items.push(
       <div key={i} className={state[i] ? 'slide active' : 'slide'}>
-        <img src={props.images[i]} alt={props.link} />
+        <img src={props.images[i]} alt={props.productLink} />
       </div>
     );
     dot_items.push(<span key={i} className={state[i] ? 'dot active' : 'dot'}></span>);
@@ -78,14 +78,14 @@ function ProductCard(props) {
         onMouseEnter={() => handleMouseEvent(1)}
         onMouseLeave={() => handleMouseEvent(0)}
       >
-        <a href={props.link} target='_blank' rel='noopener noreferrer'>
+        <a href={props.productLink} target='_blank' rel='noopener noreferrer'>
           <div className='slideshow-container'>{slide_items}</div>
         </a>
       </div>
 
       <div className='card-bottom'>
         <div className='item-name' title={props.title}>
-          <a href={props.link} target='_blank' rel='noopener noreferrer'>
+          <a href={props.productLink} target='_blank' rel='noopener noreferrer'>
             {props.title}
           </a>
         </div>
@@ -129,7 +129,7 @@ function ProductCard(props) {
 
         {props.storeName && (
           <div className='store-name'>
-            <a href='#!' target='_blank'>
+            <a href={props.storeLink} target='_blank' rel='noopener noreferrer'>
               {props.storeName}
             </a>
           </div>
