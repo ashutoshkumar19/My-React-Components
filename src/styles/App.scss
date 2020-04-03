@@ -54,6 +54,21 @@ body {
     }
   }
 
+  .featured-brands-card-container {
+    padding: 10px;
+    display: inline-block;
+    // width: 100%;
+
+    .card-brand {
+      margin: 2px;
+      float: left;
+      width: 300px;
+      .card-body {
+        height: 175px;
+      }
+    }
+  }
+
   .container-with-slider {
     margin: 50px 25px;
     height: 200px;

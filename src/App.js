@@ -3,17 +3,23 @@ import './styles/App.scss';
 import Carousel from './components/Carousel/Carousel';
 import ProductCard from './components/ProductCard/ProductCard';
 import StoreCard from './components/StoreCard/StoreCard';
+import BrandCard from './components/BrandCard/BrandCard';
 import SliderContainer from './components/ContainerWithSlider/SliderContainer';
 import SelectBox from './components/SelectBox/SelectBox';
 
 function App() {
+  var i = 0;
   const list = [];
-  for (var i = 0; i < 3; i++) {
+  for (i = 0; i < 3; i++) {
     list.push(i);
   }
   const store_list = [];
-  for (var j = 0; j < 2; j++) {
-    store_list.push(j);
+  for (i = 0; i < 2; i++) {
+    store_list.push(i);
+  }
+  const brand_list = [];
+  for (i = 0; i < 2; i++) {
+    brand_list.push(i);
   }
   return (
     <div className='main-body'>
@@ -23,7 +29,7 @@ function App() {
           slides={[
             'https://www.capturelandscapes.com/wp-content/uploads/2018/05/Seceda-sunrise-960.jpg',
             'https://www.tourmyindia.com/luxury-train-tours/wp-content/uploads/2018/08/Khajuraho.jpg',
-            'https://bhagyashritravels.com/wp-content/uploads/2017/12/sun-temple-konark-head-466.jpeg',
+            'https://worldexpeditions.com/croppedImages/Indian-Sub-Continent/Bhutan/Paro-Taktsang-Bhutan-279250-1920px-16x7.jpg',
             'https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2017/08/oia-windmill-blue-hour-sunrise-composite.jpg',
             'https://i.pinimg.com/originals/37/a9/06/37a906be8bd465bb52f092f3f89f9def.jpg',
             'https://images8.alphacoders.com/593/593421.jpg'
@@ -112,6 +118,52 @@ function App() {
             rating={'4.5'}
             categoryList={['Home Decor', 'Lifestyle', 'Furniture']}
             categoryCode={Math.floor(Math.random() * 13)}
+          />
+        ))}
+      </div>
+
+      <div className='featured-brands-card-container'>
+        <h3 className='heading'>Featured Brand Cards</h3>
+        <BrandCard
+          key={i}
+          id={i}
+          backgroundImage={
+            'https://cdn.awsind0-fusion.fds.api.mi-img.com/b2c-i18n-bbs-in/db171c4485.png?thumb=1&w=776&h=392'
+          }
+          productImages={[
+            'https://smartmove254.com/wp-content/uploads/2019/12/Redmi-A3.jpg',
+            'https://www.gizmochina.com/wp-content/uploads/2020/03/Xiaomi-Redmi-Note-9-Pro-Max-500x500.jpg',
+            'https://www.91-img.com/pictures/131776-v3-xiaomi-mi-mix-3-5g-mobile-phone-large-1.jpg'
+          ]}
+          productLinks={[
+            'https://www.google.com',
+            'https://www.amazon.com',
+            'https://www.youtube.com'
+          ]}
+          brandLogo={''}
+          brandName={'Xiaomiers Hisonic Shenzen Bay Area Distributers'}
+          brandLink={'https://www.google.com'}
+        />
+        {brand_list.map(i => (
+          <BrandCard
+            key={i}
+            id={i}
+            backgroundImage={'https://i.ytimg.com/vi/kQqGusro7fM/maxresdefault.jpg'}
+            productImages={[
+              'https://smartmove254.com/wp-content/uploads/2019/12/Redmi-A3.jpg',
+              'https://www.gizmochina.com/wp-content/uploads/2020/03/Xiaomi-Redmi-Note-9-Pro-Max-500x500.jpg',
+              'https://www.91-img.com/pictures/131776-v3-xiaomi-mi-mix-3-5g-mobile-phone-large-1.jpg'
+            ]}
+            productLinks={[
+              'https://www.google.com',
+              'https://www.amazon.com',
+              'https://www.youtube.com'
+            ]}
+            brandLogo={
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/1024px-Xiaomi_logo.svg.png'
+            }
+            brandName={'Xiaomi'}
+            brandLink={'https://www.google.com'}
           />
         ))}
       </div>
